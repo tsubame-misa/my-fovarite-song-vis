@@ -1,5 +1,4 @@
 export default async function login(req, res) {
-  console.log("login", process.env);
   const scopes = [
     "streaming",
     "user-read-email",

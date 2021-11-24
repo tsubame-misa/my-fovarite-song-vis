@@ -41,8 +41,6 @@ export default function Home() {
     );
   }
 
-  console.log(playlistData);
-
   return (
     <div>
       <Header />
