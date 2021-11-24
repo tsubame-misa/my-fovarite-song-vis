@@ -1,0 +1,28 @@
+.playlist-name-group {
+  height: 90px;
+  display: flex;
+  padding: 5px 0px;
+  border-top: solid;
+  border-bottom: solid;
+  background-color: #cee6ff30;
+  margin: 5px 0px;
+}
+.playlist-img {
+  width: 75px;
+}
+
+.playlist-name {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.75rem;
+  padding-left: 10px;
+}
+
+.item:hover {
+  color: #7ba9d8;
+}
+
+.selected-item {
+  color: #485ec6;
+}

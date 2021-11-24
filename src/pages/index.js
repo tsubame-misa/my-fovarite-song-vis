@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import SelectPlayList from "../client/components/SelectPlayList";
+import Header from "../client/components/Header";
 
 export default function Home() {
   const [userData, setUserData] = useState(null);
@@ -26,10 +27,15 @@ export default function Home() {
   if (userData === null || userData === undefined) {
     return (
       <div>
-        <div className="auth-button-group">
-          <form action="api/auth/login" method="post">
-            <button type="submit">login</button>
-          </form>
+        <Header />
+        <div className="hello-user">
+          <div className="auth-button-group">
+            <form action="api/auth/login" method="post">
+              <button type="submit" className="button">
+                login
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     );
@@ -39,12 +45,24 @@ export default function Home() {
 
   return (
     <div>
-      <div className="auth-button-group">
-        <form action="api/auth/logout" method="post">
-          <button type="submit">logout</button>
-        </form>
-      </div>
-      <SelectPlayList userData={userData} playlistData={playlistData} />
+      <Header />
+      <section
+        className="section bg-black"
+        style={{ paddingTop: "24px", paddingBottom: "24px" }}
+      >
+        <div className="container">
+          <div className="hello-user">
+            <div className="auth-button-group">
+              <form action="api/auth/logout" method="post">
+                <button type="submit" className="button">
+                  logout
+                </button>
+              </form>
+            </div>
+            <SelectPlayList userData={userData} playlistData={playlistData} />
+          </div>{" "}
+        </div>
+      </section>
     </div>
   );
 }

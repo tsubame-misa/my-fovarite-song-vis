@@ -42,8 +42,8 @@ function SelectSong({ id, musicId, setMusicId }) {
             className="playlist-img"
             src={images[0]?.url || ""}
             alt=""
-            width={500}
-            height={500}
+            width="100%"
+            height="100%"
           />
         )}
         <div className="playlist-name">{playlist?.name}</div>
