@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import SelectPlayList from "../client/components/SelectPlayList";
 import Header from "../client/components/Header";
+import DefaultSongs from "../client/components/DefaultSongs";
 
 export default function Home() {
   const [userData, setUserData] = useState(null);
@@ -28,11 +29,12 @@ export default function Home() {
     return (
       <div>
         <Header />
+
         <div className="hello-user">
           <div className="auth-button-group">
             <form action="api/auth/login" method="post">
               <button type="submit" className="button">
-                login
+                ログイン
               </button>
             </form>
           </div>
@@ -40,6 +42,8 @@ export default function Home() {
       </div>
     );
   }
+
+  //アクセストークンの有効期限が切れた時の処理を書かないといけない
 
   return (
     <div>
@@ -53,12 +57,12 @@ export default function Home() {
             <div className="auth-button-group">
               <form action="api/auth/logout" method="post">
                 <button type="submit" className="button">
-                  logout
+                  ログアウト
                 </button>
               </form>
             </div>
             <SelectPlayList userData={userData} playlistData={playlistData} />
-          </div>{" "}
+          </div>
         </div>
       </section>
     </div>

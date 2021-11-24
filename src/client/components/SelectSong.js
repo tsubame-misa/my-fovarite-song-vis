@@ -31,7 +31,7 @@ function SelectSong({ id, musicId, setMusicId }) {
   const images = playlist?.images ?? [];
 
   if (playlist === null) {
-    return <div>曲がありません</div>;
+    return <div></div>;
   }
 
   return (

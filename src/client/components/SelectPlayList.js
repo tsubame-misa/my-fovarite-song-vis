@@ -7,9 +7,6 @@ function SelectPlayList({ userData, playlistData }) {
   const [musicId, setMusicId] = useState("");
   return (
     <div>
-      <div className="hello-user">
-        {userData?.display_name}さん &ensp; My Favorite Songs Visへようこそ
-      </div>
       <div className="columns">
         <div className="column is-2">
           <div className="playlist-header">プレイリスト</div>

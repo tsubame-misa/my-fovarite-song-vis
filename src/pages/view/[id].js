@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { keyDict, hueDark, keyDictEng } from "../../client/components/keyInfo";
 import * as d3 from "d3";
 import Link from "next/link";
+import Header from "../../client/components/Header";
 
 function convertTime(second) {
   function zeroPadding(num, length) {
@@ -27,7 +28,6 @@ function View() {
   const router = useRouter();
   const id = router.query.id;
 
-  const [song, setSong] = useState(null);
   const [data, setData] = useState([]);
   const [bar, setBar] = useState([]);
   const [beats, setBeats] = useState([]);
@@ -167,22 +167,28 @@ function View() {
 
   if (data.length === 0) {
     return (
-      <div
-        style={{
-          fontSize: "1.5rem",
-          height: "300px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        loading...
+      <div>
+        <Header />
+        <main>
+          <div
+            style={{
+              fontSize: "1.5rem",
+              height: "300px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            loading...
+          </div>
+        </main>
       </div>
     );
   }
 
   return (
     <div>
+      <Header />
       <main>
         <section className="section">
           <div style={{ display: "flex" }}>
@@ -641,13 +647,13 @@ function View() {
                       <rect
                         x={0}
                         y={0}
-                        width="600"
+                        width="800"
                         height="300"
                         fill="gray"
                         opacity="0.85"
                       />
                       <text
-                        x={550 / 2}
+                        x={800 / 2}
                         y={75}
                         textAnchor="middle"
                         dominantBaseline="central"
@@ -659,7 +665,7 @@ function View() {
                         {info.time}
                       </text>
                       <text
-                        x={550 / 2}
+                        x={800 / 2}
                         y={200}
                         textAnchor="middle"
                         dominantBaseline="central"
