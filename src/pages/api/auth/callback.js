@@ -37,5 +37,7 @@ export default async function callback(req, res) {
     path: "/",
   });
 
+  console.log("Token", result.access_token);
+
   res.redirect(301, "/");
 }
