@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import "./components/charts/tooltip.css";
+import "../client/components/charts/tooltip.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

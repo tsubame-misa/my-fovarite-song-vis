@@ -46,7 +46,7 @@ function RaderChart({ data }) {
   let score = "";
   const scorePoint = [];
   const c = Math.PI / 180;
-  const tooltipStyle = d3.select("body").append("div").attr("class", "tooltip");
+  //const tooltipStyle = d3.select("body").append("div").attr("class", "tooltip");
 
   for (let _r = 0; _r < rs.length; _r++) {
     for (let i = 0; i <= len; i++) {

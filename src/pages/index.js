@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SelectPlayList from "./components/SelectPlayList";
+import SelectPlayList from "../client/components/SelectPlayList";
 
 export default function Home() {
   const [userData, setUserData] = useState(null);
@@ -55,3 +55,6 @@ export default function Home() {
 // }
 
 // get は　キャッシュ、 postは見ない
+
+//pagesに置くのは,ブラウザのやつとapi系
+//コンポーネントとして使うのは外に出さないとダメ
