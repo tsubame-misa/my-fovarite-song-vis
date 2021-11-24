@@ -29,7 +29,6 @@ export default function Home() {
     return (
       <div>
         <Header />
-
         <div className="hello-user">
           <div className="auth-button-group">
             <form action="api/auth/login" method="post">
@@ -60,6 +59,10 @@ export default function Home() {
                   ログアウト
                 </button>
               </form>
+            </div>
+            <div className="hello-user">
+              {userData?.display_name}さん &ensp; My Favorite Songs
+              Visへようこそ
             </div>
             <SelectPlayList userData={userData} playlistData={playlistData} />
           </div>
