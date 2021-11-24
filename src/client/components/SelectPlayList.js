@@ -13,19 +13,21 @@ function SelectPlayList({ userData, playlistData }) {
       <div className="columns">
         <div className="column is-2">
           <div className="playlist-header">プレイリスト</div>
-          {playlistData?.items?.map((item) => {
-            return (
-              <div
-                key={item.id}
-                className={item.id === playlistId ? "selected-item" : "item"}
-                onClick={() => {
-                  setPlaylistId(item.id);
-                }}
-              >
-                {item.name}
-              </div>
-            );
-          })}
+          <ol>
+            {playlistData?.items?.map((item) => {
+              return (
+                <li
+                  key={item.id}
+                  className={item.id === playlistId ? "selected-item" : "item"}
+                  onClick={() => {
+                    setPlaylistId(item.id);
+                  }}
+                >
+                  {item.name}
+                </li>
+              );
+            })}
+          </ol>
         </div>
         <div className="column">
           <SelectSong

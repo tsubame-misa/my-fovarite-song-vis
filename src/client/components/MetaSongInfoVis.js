@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 //import { keyDict } from "../page/View";
 import RaderChart from "./charts/RaderChart";
 import Link from "next/link";
-//import "./MetaSongInfoVis.css";
 
 const MetaSongInfoVis = ({ id }) => {
   const [meta, setMeta] = useState(null);

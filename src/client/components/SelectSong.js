@@ -50,19 +50,21 @@ function SelectSong({ id, musicId, setMusicId }) {
       </div>
 
       <div>
-        {playlistDetail.items?.map((item) => {
-          return (
-            <div
-              key={item.track.id}
-              className={item.track.id === musicId ? "selected-item" : "item"}
-              onClick={() => {
-                setMusicId(item.track.id);
-              }}
-            >
-              {item.track.name}
-            </div>
-          );
-        })}
+        <ol>
+          {playlistDetail.items?.map((item) => {
+            return (
+              <li
+                key={item.track.id}
+                className={item.track.id === musicId ? "selected-item" : "item"}
+                onClick={() => {
+                  setMusicId(item.track.id);
+                }}
+              >
+                {item.track.name}
+              </li>
+            );
+          })}
+        </ol>
       </div>
     </div>
   );

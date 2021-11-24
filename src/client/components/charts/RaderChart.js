@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import * as d3 from "d3";
 
 function Tooltip({ clientX, clientY, show, feature, value }) {
   if (feature === "instrumentalness") {
@@ -18,7 +17,7 @@ function Tooltip({ clientX, clientY, show, feature, value }) {
 }
 
 function RaderChart({ data }) {
-  const useData = [
+  const dataFeature = [
     "acousticness",
     "danceability",
     "energy",
@@ -34,7 +33,8 @@ function RaderChart({ data }) {
   const [show, setShow] = useState(false);
   const [info, setInfo] = useState({});
 
-  const len = useData.length;
+  // レーダーチャートのデータ作成
+  const len = dataFeature.length;
   const posX = 50;
   const posY = 50;
   const r = 50;
@@ -46,13 +46,12 @@ function RaderChart({ data }) {
   let score = "";
   const scorePoint = [];
   const c = Math.PI / 180;
-  //const tooltipStyle = d3.select("body").append("div").attr("class", "tooltip");
 
   for (let _r = 0; _r < rs.length; _r++) {
     for (let i = 0; i <= len; i++) {
-      let key = useData[i];
+      let key = dataFeature[i];
       if (i === len) {
-        key = useData[0];
+        key = dataFeature[0];
       }
       const x = posX + rs[_r] * Math.cos(((360 / len) * i - 90) * c);
       const y = posY + rs[_r] * Math.sin(((360 / len) * i - 90) * c);
@@ -102,7 +101,7 @@ function RaderChart({ data }) {
   }
 
   const margin = {
-    left: 25,
+    left: 27.5,
     right: 20,
     top: 10,
     bottom: 10,
